@@ -1,0 +1,7 @@
+.env
+.vscode/
+credentials.json
+db.sqlite3
+myvenv/
+token.json
+**/__pycache__/*

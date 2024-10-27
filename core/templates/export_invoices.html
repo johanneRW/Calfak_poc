@@ -1,0 +1,14 @@
+<form method="post" action="{% url 'export_invoices' %}">
+    {% csrf_token %}
+
+    {% if ready_for_export %}
+        <ul>
+            {% for series in ready_for_export %}
+                <li> <input type="checkbox" name="id" value="{{ series.id }}" /> {{ series.customer}}: {{series.start_date}} - {{series.end_date}}</li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Eksportér som fakturaer</button>
+    {% else %}
+        <p>Der blev ikke fundet nogen aftalerækker, som er klar til fakturering.</p>
+    {% endif %}
+</form>

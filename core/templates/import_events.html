@@ -1,0 +1,21 @@
+<form method="post" action="{% url 'import_events' %}">
+    {% csrf_token %}
+
+    {% if events %}
+        <ul>
+            {% for event in events %}
+                <li>
+                    {{ event.summary }}
+                    -
+                    {{ event.description }}
+                    -
+                    {% firstof event.start.dateTime event.start.date %}
+
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Importér Aftaler</button>
+    {% else %}
+        <p>Der blev ikke fundet nogen aftaler.</p>
+    {% endif %}
+</form>

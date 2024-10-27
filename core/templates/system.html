@@ -1,0 +1,17 @@
+<form method="POST" action="/system/import/products/">
+    {% csrf_token %}
+    <input type="radio" id="billy" name="system" value="billy">
+    <label for="billy">Billy</label><br>
+    <input type="radio" id="economic" name="system" value="economic">
+    <label for="economic">E-conomic</label><br>
+    <input type="submit" value="Importer produkter">
+</form>
+
+<form method="POST" action="/system/import/customers/">
+    {% csrf_token %}
+    <input type="radio" id="billy" name="system" value="billy">
+    <label for="billy">Billy</label><br>
+    <input type="radio" id="economic" name="system" value="economic">
+    <label for="economic">E-conomic</label><br>
+    <input type="submit" value="Importer kunder">
+</form>
